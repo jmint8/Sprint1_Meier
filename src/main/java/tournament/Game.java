@@ -1,9 +1,15 @@
 package tournament;
 
-public abstract class Game {
+import java.util.ArrayList;
+import java.util.List;
 
-	public Game() {
-		// TODO Auto-generated constructor stub
+public abstract class Game {
+	private final List<GameObserver> observers = new ArrayList<>();
+	
+	public void attach(GameObserver observer)
+	{
+		observers.add(observer);
 	}
+	
 
 }
