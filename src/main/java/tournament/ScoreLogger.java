@@ -26,7 +26,7 @@ public class ScoreLogger implements GameObserver {
 	@Override
 	public void onGameEnd(GameResult result) {
 		try (FileWriter fw = new FileWriter(filePath, true)) {
-            fw.write(result.getP1Name() + " vs " + result.getP2Name() + " | Winner: " + result.getWinner() + "\n");
+            fw.write(result.getP1Name()+" vs "+result.getP2Name()+"\n"+"Winner: "+ result.getWinner()+ "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
