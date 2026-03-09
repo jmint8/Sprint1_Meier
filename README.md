@@ -4,7 +4,7 @@
 
 <h2>//My current TODO</h2>
 <p>Finsh:</p>
-<p>[ ] Abstract Game</p>
+<p>[x] Abstract Game</p>
 <p>[ ] Itterated Prisoners Delima Extension</p>
 <p>[ ] Tournament result</p>
 <p>[ ] Round Robin</p>

@@ -28,4 +28,11 @@ public class GameHistory {
 		this.rounds = new ArrayList<>();
 	}
 	
+	public RoundResult getLastRound(){
+		if(rounds == null || rounds.isEmpty()) {
+			return null;
+		}
+		return rounds.get(rounds.size() -1);
+	}
+	
 }

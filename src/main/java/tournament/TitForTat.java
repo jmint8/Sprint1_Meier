@@ -10,10 +10,19 @@ public class TitForTat implements Participant {
 
 	@Override
 	public Action chooseAction(GameHistory history) {
-		// TODO Auto-generated method stub
-		// if (history.getRounds().isEmpty()){
-		return null;
-		//need some way to check for last action
+		RoundResult lastRound = history.getLastRound();
+		if (lastRound == null) {
+			return PrisonerAction.COOPERATE;
+		}
+		
+		if(history.getP1Name().equals(this.getName())) {
+			return lastRound.getActionP2();
+			//this is so we make sure the last action is the one that belonged to the opponent.
+		}
+		else {
+			return lastRound.getActionP1();
+		}
+		
 	}
 
 	@Override
