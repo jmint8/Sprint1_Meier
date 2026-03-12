@@ -1,0 +1,24 @@
+package SITS.Actions;
+
+import SITS.Game.GameHistory;
+
+public class AlwaysDefect implements Participant {
+
+	
+	@Override
+	public String getName(){
+		return "Always Defect";
+	}
+	
+	@Override
+    public Action chooseAction(GameHistory history) {
+        return PrisonerAction.DEFECT;
+    }
+
+	@Override
+	public void reset() {
+		//nothing
+		
+	}
+
+}
