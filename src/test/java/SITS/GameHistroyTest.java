@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import SITS.Actions.PrisonerAction;
 import SITS.Game.GameHistory;
+import SITS.Game.MoveEvent;
 import SITS.Game.RoundResult;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 class GameHistoryTest {
 	GameHistory history;
+	MoveEvent event;
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -39,9 +41,15 @@ class GameHistoryTest {
 		history.getRounds().add(round3);
 		
 		assertEquals(round3, history.getLastRound());
+		
+		
+		//I'm adding in the moveEvent testing here just for code coverage purposes
+		event = new MoveEvent(history, round1);
+		assertEquals(history, event.getHistory());
+		assertEquals(round1, event.getRound());
+		
 	}
 	
-    
     
 
 }
