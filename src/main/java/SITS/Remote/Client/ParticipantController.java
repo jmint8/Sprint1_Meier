@@ -25,8 +25,7 @@ public class ParticipantController {
 	
 	@GetMapping("/action")
 	public String getAction(@RequestBody GameHistoryDTO dto) {
-		GameHistory history = dto.toGameHistory();
-		return participant.chooseAction(history).getLabel();
+		return participant.chooseAction(dto.toGameHistory()).getLabel();
 	}
 		
 	@PostMapping("/reset")

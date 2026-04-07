@@ -21,15 +21,14 @@ public class GameHistoryDTO {
 	
 	public GameHistory toGameHistory() {
 		GameHistory history = new GameHistory(nameP1, nameP2);
-		int numRounds = 1;
-		for(RoundResultDTO round: rounds) {
-			history.getRounds().add(new RoundResult(
-					new StringAction(round.actionP1),
-					new StringAction(round.actionP2),
-					round.payoffP1,
-					round.payoffP2,
-					numRounds++
-							));
+		for(int i = 0; i<rounds.size();i++) {
+			RoundResultDTO r = rounds.get(i);
+		 	history.getRounds().add(new RoundResult(
+				new StringAction(r.actionP1),
+				new StringAction(r.actionP2),
+			 	r.payoffP1, 
+			 	r.payoffP2, 
+			 	i + 1));
 		}
 		
 		return history;
