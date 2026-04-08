@@ -25,18 +25,19 @@ public class TournamentServerClient {
 	 * after. then proceeded to ghost us until after the presentation of the design */
 	//and since the Remote PArticipant is using Remote Template i guess I'll keep the same style
 
-	public List<NetworkedTournament> listTournaments()
+	
+	//should only be read only here so I guess this <?> is fine 
+	public List<?> listTournaments()
 	{
-		
-		return null;
-	}
+		return restTemplate.getForObject(server_url+ "/tournaments",List.class); 
+	} 
 	
 	public void register(String tournamentId, String name, String ip, int port) 
 	{
+		RegistrationRequest request = new RegistrationRequest(name,ip,port); 
+		restTemplate.postForObject(
+				server_url +"/register/"+ tournamentId,request, String.class); 
 	
-		
 	}
-	
-	
-	
+
 }
