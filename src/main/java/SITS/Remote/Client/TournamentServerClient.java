@@ -43,7 +43,7 @@ public class TournamentServerClient {
     
     public List<?> listTournaments() {
          return client.get()
-				.uri(serverUrl + "/tournaments")
+				.uri(server_url + "/tournaments")
                 .retrieve()
                 .body(List.class);
 	} 

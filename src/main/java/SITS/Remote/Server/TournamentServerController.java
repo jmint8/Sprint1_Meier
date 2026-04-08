@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import SITS.Game.TournamentResult;
 import SITS.Remote.Network.dto.RegistrationRequest;
 
-
+@RestController
 public class TournamentServerController 
 {
 	private TournamentRegistry registry;
