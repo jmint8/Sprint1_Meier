@@ -9,6 +9,7 @@ import SITS.Actions.Participant;
 import SITS.Game.Game;
 import SITS.Game.TournamentFormat;
 import SITS.Game.TournamentResult;
+import SITS.Remote.Network.RemoteParticipant;
 import SITS.Remote.Network.dto.RegistrationRequest;
 
 public class NetworkedTournament {
@@ -49,13 +50,20 @@ public class NetworkedTournament {
 	
 	public void addRemoteParticipant(RegistrationRequest request)
 	{
-		//stuff here
+		String client_url = "http://" + request.ip + ":" + request.port;
+		RemoteParticipant remote = new RemoteParticipant(request.name, client_url, actionFactory);
+		participants.add(remote);
 	}
 	
 	public TournamentResult start() 
 	{
-		return null;
-		//stuff here
+		
+		this.status = TournamentStatus.RUNNING; 
+		TournamentResult result = format.run(participants,game); 
+		this.status = TournamentStatus.COMPLETED; 
+		
+		return result; 
+		
 	}
 	
 	

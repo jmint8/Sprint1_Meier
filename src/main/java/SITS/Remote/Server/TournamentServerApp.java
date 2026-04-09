@@ -8,7 +8,7 @@ import SITS.Game.ItteratedPrisonersDilemma;
 import SITS.Game.RoundRobin;
 
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "SITS")
 public class TournamentServerApp 
 {
 	//I guess this wasn't in the design document but think this is going to be the

@@ -1,5 +1,6 @@
 package SITS.Remote.Server;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,8 +40,15 @@ public class TournamentRegistry
 	
 	public List<NetworkedTournament> listRegistering()
 	{
-		return null;
-		//TODO
+		List<NetworkedTournament> regi = new ArrayList<>();
+		for (NetworkedTournament tourn : tournaments.values()) {
+			if(tourn.getStatus() == TournamentStatus.REGISTERING)
+			{
+				regi.add(tourn);
+			}
+		}
+		return regi;
+		
 	}
 	
 	
