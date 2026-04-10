@@ -25,13 +25,13 @@ public class ClientApp
 {
 	private int port;
 	
-	@Value("${tournament.server.url}")
+	@Value("${tournament.server.url:http://localhost:8080}")
 	private String server_url;
 	
-	@Value("${tournament.id}")
+	@Value("${tournament.id:ipd-1}")
 	private String tournamentId;
 	
-	@Value("${participant.name}")
+	@Value("${participant.name:DefaultPlayer}")
 	private String participantName;
 	
 	@Autowired
@@ -39,21 +39,10 @@ public class ClientApp
 	
 	public static void main(String[] args) 
 	{
+		System.setProperty("server.port", "0");
 		SpringApplication.run(ClientApp.class, args);
 	}
 	
-	@Bean
-	public Participant participant()
-	{
-		return new TitForTat();
-	}
-	
-	@Bean
-	public TournamentServerClient tournamentServerClient()
-	{
-		return new TournamentServerClient(server_url);
-	}
-	 
 	
 	@EventListener
 	public void onServerInitialized(ServletWebServerInitializedEvent event)
