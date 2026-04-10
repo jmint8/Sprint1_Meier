@@ -14,6 +14,7 @@ import SITS.Remote.Network.dto.RegistrationRequest;
 @RestController
 public class TournamentServerController 
 {
+	
 	private TournamentRegistry registry;
 
 	/**
@@ -43,6 +44,8 @@ public class TournamentServerController
 		{
 			return ResponseEntity.badRequest().body("registrations are closed");
 		}
+		
+		body.name = body.name +"-"+ body.ip +":"+ body.port;
 		
 		tournament.addRemoteParticipant(body);
 		return ResponseEntity.ok("registered "+body.name+" to tournament id"+id);
