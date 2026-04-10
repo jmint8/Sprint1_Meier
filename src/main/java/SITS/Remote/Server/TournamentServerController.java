@@ -51,7 +51,7 @@ public class TournamentServerController
 		return ResponseEntity.ok("registered "+body.name+" to tournament id"+id);
 	}
 	
-	@PostMapping("/start/{id}")
+	@GetMapping("/start/{id}")
 	public TournamentResult start(@PathVariable String id) 
 	{
 		NetworkedTournament tournament = registry.get(id);

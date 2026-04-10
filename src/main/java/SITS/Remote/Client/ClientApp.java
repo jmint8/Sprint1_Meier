@@ -53,7 +53,7 @@ public class ClientApp
 	@EventListener(ApplicationReadyEvent.class)
 	public void onApplicationReady() throws UnknownHostException
 	{
-		String ip = InetAddress.getLocalHost().getHostAddress();
+		String ip = "127.0.0.1";
 		client.register(tournamentId, participantName, ip, port);
 		System.out.println("you are: "+ participantName
 				+", your ip is: " +ip+ ", and your port is: " + port);
