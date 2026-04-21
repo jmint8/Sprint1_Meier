@@ -64,8 +64,6 @@ class NetworkTests {
 		
 		GameHistory history = new GameHistory("Adam","NetRunner");
 		
-		//tell template what to do
-		
 		Action action = rm.chooseAction(history);
 		assertEquals("COOPERATE", action.getLabel());
 		
