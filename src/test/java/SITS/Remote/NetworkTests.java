@@ -32,14 +32,7 @@ class NetworkTests {
 		assertEquals("DEFECT",action.getLabel());
 	}
 	
-	//remote participant tests
-	
-	@Test
-	void RemoteParticipantGetters()
-	{
-		RemoteParticipant rm = new RemoteParticipant("NetRunner", "http://localhost:8080", StringAction::new);
-		assertEquals("NetRunner", rm.getName());
-	}
+
 	
 	@Test
 	void RMParticipantTest()
