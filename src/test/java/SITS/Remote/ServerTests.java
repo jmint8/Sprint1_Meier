@@ -40,8 +40,8 @@ class ServerTests {
 		when(tourna1.getStatus()).thenReturn(TournamentStatus.REGISTERING);
 		
 		NetworkedTournament tourna2 = mock(NetworkedTournament.class);
-		when(tourna1.getId()).thenReturn("comp_Test");
-		when(tourna1.getStatus()).thenReturn(TournamentStatus.COMPLETED);
+		when(tourna2.getId()).thenReturn("comp_Test");
+		when(tourna2.getStatus()).thenReturn(TournamentStatus.COMPLETED);
 		
 		reg.add(tourna1);
 		reg.add(tourna2);
@@ -49,11 +49,21 @@ class ServerTests {
 		//list registering shouldnt list out completed tournaments 
 		List<NetworkedTournament> regList = reg.listRegistering();
 		
-		assertFalse(regList.contains(tourna2));
+		assertFalse(regList.contains(tourna2)); 
+		assertTrue(regList.contains(tourna1));
+	}
+	
+	@Test
+	void controllerTesting() {
 		
-		//as of now (4/21) this fails, but It shouldnt 
-		//assertTrue(regList.contains(tourna1));
+		//nothing
 		
 	}
+	
+	
+	
+	
+	
+	
 
 }
