@@ -32,9 +32,9 @@ class ClientTests {
 		assertEquals("http://testing",TSC.getServer_url());
 		assertNotNull(TSC.getRestTemplate());
 		
-		//ListTournaments test
-		//needs more setup from rest template
-		
+		//ListTournaments test.
+		//needs more setup from rest template.
+		//also need the registration tests. 
 		
 	}
 
