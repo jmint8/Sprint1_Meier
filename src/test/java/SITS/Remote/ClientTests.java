@@ -15,6 +15,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 class ClientTests {
 
+	/*
+	 requirements for this test file include hitting the GET/name, POST/action, 
+	 POST/reset endpoints.
+	 
+	 note to self: create an actual tournament instance. not with mockito like how you started ServerTests.
+	 - Test the endpoint communications. 
+	 - All methods and classes in this package should be tested. 
+	*/
 	
 
 	@Test
@@ -25,8 +33,9 @@ class ClientTests {
 		assertNotNull(TSC.getRestTemplate());
 		
 		//ListTournaments test
-		//needs more setup from rest template 
-	
+		//needs more setup from rest template
+		
+		
 	}
 
 }
