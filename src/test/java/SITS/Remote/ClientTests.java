@@ -2,6 +2,8 @@ package SITS.Remote;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 
 import SITS.Remote.Client.ClientApp;
 import SITS.Remote.Client.TournamentServerClient;
+import SITS.Remote.Network.dto.GameHistoryDTO;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -53,7 +56,7 @@ class ClientTests {
 		}
 	}
 	
-	
+	//name endpoint
 	@Test 
 	void nametest(){
 		String url = "http://localhost:"+port +"/name";
@@ -61,7 +64,15 @@ class ClientTests {
 		assertEquals("Tit For Tat", response.getBody());
 	}
 
-
+	//action endpoint
+	@Test
+	void testAction() {
+		String url = "http://localhost:" + port + "/action";
+		GameHistoryDTO dto = new GameHistoryDTO( "TitForTat", "Opponent",new ArrayList<>()); 
+		ResponseEntity<String> response = restTemp.postForEntity(url, dto, String.class);
+		
+		assertEquals("COOPERATE", response.getBody());
+	}
 
 
 
