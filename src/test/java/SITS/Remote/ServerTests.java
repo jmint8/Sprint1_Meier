@@ -51,7 +51,25 @@ class ServerTests {
 		
 		assertFalse(regList.contains(tourna2)); 
 		assertTrue(regList.contains(tourna1));
+		
+		
+		/* this testing was originally made with mock but I am going to leave it here and adopting a new 
+		 * testing style that actually has a real instance of the tournament and test the endpoints from there. 
+		 * 
+		 * however sprint 3 javafx implementation will have the mock testing. 
+		 * 
+		*/
 	}
+	
+	
+	/* THINGS TO TEST:
+	 * 
+	 * addRemoteParticipant()
+	 * getTournaments() - this is just listRegistering() again. 
+	 * TournamentServerController constructor (obviously)
+	 * register on the tournament server controller side. 
+	 * start() ???? and start(String, RegistrationRequest)
+	 */
 	
 	@Test
 	void controllerTesting() {

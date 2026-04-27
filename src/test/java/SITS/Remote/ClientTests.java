@@ -142,13 +142,10 @@ class ClientTests {
 		
 		client.register("ipd-1","testPlayer","127.0.0.1",9090);
 		//register test player and check if the player is in there. /registered only exists in testing
-		//to make sure registration works 
+		//to make sure registration works
 		List<?> registered =  restTemp.getForObject("http://localhost:"+port+"/registered", List.class);
 		assertNotNull(registered);
 		assertTrue(registered.contains("testPlayer"));
-		
 	}
-	
-
 
 }
